@@ -1,0 +1,137 @@
+uuid: ada21e9b-fedd-4d75-9a94-977395fb9ea0
+handle: WebsiteGlobals
+type: global
+name: Website Ayarları
+
+
+
+navigation:
+    parent: Proje\Post
+    icon: icon-globe
+    order: 10
+
+fields:
+    # Genel Site Ayarları Sekmesi
+    website_name:
+        label: Site Adı
+        tab: Genel
+        
+    website_title:
+        label: Site Başlığı
+        tab: Genel
+    
+    contact_email:
+        label: İletişim E-posta
+        tab: Genel
+
+    contact_telefon_tr:
+        label: Telefon
+        tab: Genel
+
+    contact_telefon_en:
+        label: Phone
+        tab: Genel
+
+    contact_email_tr:
+        label: E Posta
+        tab: Genel
+
+    contact_email_en:
+        label: E Mail
+        tab: Genel
+
+    contact_adres_tr:
+        label: Adres
+        tab: Genel
+
+    contact_adres_en:
+        label: Address
+        tab: Genel
+
+
+    contact_address:
+        label: İletişim Adres
+        tab: Genel
+
+    contact_address_en:
+        label: Contact Adres
+        tab: Genel
+
+    contact_phone:
+        label: İletişim Telefon
+        tab: Genel
+
+    # Proje Metinleri Sekmesi
+    project_terms_section:
+        label: Proje Başlıkları
+        type: section
+        tab: Proje Terimleri
+    
+    # Türkçe Terimler
+    tr_terms_section:
+        label: Türkçe Terimler
+        type: section
+        tab: Proje Terimleri
+        
+    tr_lokasyon_title:
+        label: Lokasyon Başlığı (TR)
+        type: text
+        default: Lokasyon
+        tab: Proje Terimleri
+        
+    tr_stones_title:
+        label: Kullanılan Taşlar Başlığı (TR)
+        type: text
+        default: Kullanılan Taşlar
+        tab: Proje Terimleri
+        
+    tr_area_title:
+        label: Alan Başlığı (TR)
+        type: text
+        default: Alan
+        tab: Proje Terimleri
+    
+    # İngilizce Terimler
+    en_terms_section:
+        label: İngilizce Terimler
+        type: section
+        tab: Proje Terimleri
+        
+    en_lokasyon_title:
+        label: Lokasyon Başlığı (EN)
+        type: text
+        default: Location
+        tab: Proje Terimleri
+        
+    en_stones_title:
+        label: Kullanılan Taşlar Başlığı (EN)
+        type: text
+        default: Stones Used
+        tab: Proje Terimleri
+        
+    en_area_title:
+        label: Alan Başlığı (EN)
+        type: text
+        default: Area
+        tab: Proje Terimleri
+        
+    # Sosyal Medya Sekmesi
+    facebook_url:
+        label: Facebook URL
+        placeholder: "https://..."
+        tab: Sosyal Medya
+        
+    twitter_url:
+        label: Twitter URL
+        placeholder: "https://..."
+        tab: Sosyal Medya
+        
+    instagram_url:
+        label: Instagram URL
+        placeholder: "https://..."
+        tab: Sosyal Medya
+        
+    linkedin_url:
+        label: LinkedIn URL
+        placeholder: "https://..."
+        tab: Sosyal Medya

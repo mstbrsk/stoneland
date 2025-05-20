@@ -1,0 +1,23 @@
+uuid: 15f64de3-5084-4ef9-b591-314d24581729
+handle: Urun\Kategori
+type: structure
+name: Kategori
+drafts: false
+
+structure:
+    maxDepth: 3
+
+
+
+navigation:
+    icon: icon-tree
+    parent: Urun\Post
+    order: 10
+
+fields:
+    content:
+        label: Content
+ 
+
+
+

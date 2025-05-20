@@ -1,0 +1,111 @@
+url = "/blog/post/:slug/:id"
+layout = "blog"
+title = "Display a Blog Post"
+meta_title = "{{ blog.title }} - Blog"
+
+[section post]
+handle = "Blog\Post"
+identifier = "id"
+
+[collection blogCategories]
+handle = "Blog\Category"
+
+[resources]
+vars[activeNavLink] = "blog"
+==
+{% if post is empty %}
+    {% do abort(404) %}
+{% elseif post.slug and post.slug != this.param.slug %}
+    {% do redirect(''|page({ slug: post.slug }), 301) %}
+{% endif %}
+
+
+
+
+<style> 
+  .paragraph > p { color: black;}
+
+  .paragraph > ul > li { color: black;}
+
+  .paragraph > h2{ color: black;font-size: 40px; line-height: 50px;}
+
+  .paragraph > h1{ color: black; font-size: 40px; line-height: 50px;}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="card card-post card-primary"  >
+    {% if post.banner %}
+        <div class="card-banner banner-lg" style="background-image:url('{{ post.banner.path }}')"></div>
+    {% else %}
+        <div class="card-banner banner-lg" style="background-image:url('{{ partial('site/helpers/random-stock-image') }}')"></div>
+    {% endif %}
+
+
+
+
+
+
+
+    
+
+    <div class="container paragraph" style="color: black;">
+   
+   <p style="color: black;">
+    
+        {% if post.entry_type == 'markdown_post' %}
+            {{ post.content|md|content }}
+        {% else %}
+            {{ post.content|content }}
+        {% endif %}
+    </p>
+        <div class="blog-post-gallery">
+            {% partial 'controls/gallery-slider' gallery=post.gallery %}
+        </div>
+
+        <div class="row pt-3" >
+            <div class="col-md-8">
+                <div class="card-meta">
+                    {% if post.categories %}
+                        <div class="meta-item meta-categories">
+                            Posted in
+                            {% for category in post.categories %}
+                                <a href="{{ 'blog/category'|page({ slug: category.slug, id: category.id }) }}">{{ category.title }}</a>{{ not loop.last ? ',' }}
+                            {% endfor %}
+                        </div>
+                        <div class="meta-item px-2">
+                            &bull;
+                        </div>
+                    {% endif %}
+                    <div class="meta-item text-icon text-icon-date">
+                        {{ post.published_at_date|date('j M Y') }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-end">
+                <div class="share-button">
+                    {% partial 'elements/share-button' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    
+</article>

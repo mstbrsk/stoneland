@@ -1,0 +1,38 @@
+
+
+
+<div class="col-12 col-md-6 col-xl-3">
+    <div class="team-m__single ">
+        {% if post.banner %}
+       <div class="thumb">
+          <a href="{{ 'product/post'|page({ slug: post.slug, id: post.id }) }}">
+             <img src="{{ post.banner.path }}" alt="Image">
+          </a>
+          {% if post.categories %}
+          <div class="thumb__content" data-background="">
+             <div class="info">
+               <a href="{{ 'product/post'|page({ slug: post.slug, id: post.id }) }}l">  <p>{{ post.featured_text }}</p></a>
+             </div>
+             <h4>
+                <a href="{{ 'product/post'|page({ slug: post.slug, id: post.id }) }}l">{{ post.title }}</a>
+             </h4>
+             <p></p>
+            
+             <div class="social-alt">
+                {% for category in post.categories %}
+                <a href="{{ 'product/category'|page({ slug: category.slug, id: category.id }) }}" target="_blank"
+                   aria-label="share us on facebook">
+                   {{ category.title }}
+                </a>
+                {% endfor %}
+              
+             </div>
+          </div>
+          {% endif %}
+       </div>
+       {% else %}
+       <div class="card-banner {{ bannerCss|default('') }}" style="background-image:url('{{ partial('site/helpers/random-stock-image') }}')"></div>
+       {% endif %}
+    </div>
+ </div>
+

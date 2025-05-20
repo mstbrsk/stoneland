@@ -1,0 +1,96 @@
+[backendLink]
+[sitePicker]
+
+
+
+[section footerNav]
+handle = "Site\Menus"
+identifier = "slug"
+value = "footer-nav"
+
+==
+{% set activeNavLink = activeNavLink|default(this.page.id) %}
+
+
+
+ <header class="layout-header">
+    <div class="primary-navbar quinary--navbar">
+       <div class="container">
+          <div class="row">
+             <div class="col-12">
+                <nav class="navbar p-0">
+                    <div class="navbar__logo">
+                       
+                           <img src="{{'assets/images/stoneland_logo_black.png' | theme }}" alt="Image" style="width: 400px;height: auto;" >
+                    
+                           <button class="open-offcanvas-nav d-none d-xl-flex" aria-label="toggle mobile menu">
+                            <i class="fa-light fa-bars-staggered"></i>
+                         </button>
+                     </div>
+                   <div class="navbar__menu">
+                    
+                       <ul class="navbar__list">
+       
+                          <div class="navbar__menu">
+                          <ul class="navbar__list">
+                            {% for headerItem in footerNav.items.toNested %}
+                            {% if headerItem.children|length > 0 %}
+                                {# Alt menüleri olan öğe #}
+                                <li class="navbar__item navbar__item--has-children nav-fade">
+                                    <button aria-label="dropdown menu" class="navbar__dropdown-label">{{ headerItem.title }}</button>
+                                    <ul class="navbar__sub-menu">
+                                        {% for childItem in headerItem.children %}
+                                            <li>
+                                                <a {% if childItem.reference %}href="{{ childItem.reference|link }}"{% endif %} {{ childItem.is_external ? 'target="_blank"' }}>
+                                                    {{ childItem.title }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            {% else %}
+                                {# Alt menüleri olmayan öğe #}
+                                <li class="navbar__item nav-fade">
+                                    <a {% if headerItem.reference %}href="{{ headerItem.reference|link }}"{% endif %} {{ headerItem.is_external ? 'target="_blank"' }}>
+                                        {{ headerItem.title }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+
+
+
+      <ul class="navbar__list">
+          <li><a href="http://127.0.0.1:8000">Tr</a></li>   
+            <li><a href="http://127.0.0.1:8000/en">En</a></li>         
+
+
+</ul>
+
+
+
+                        </ul>
+                       </div> 
+
+             
+
+
+                    </div>
+                    <div class="navbar__options">
+                   
+                        <button class="open-offcanvas-nav d-flex d-xl-none" aria-label="toggle mobile menu">
+                           <i class="fa-light fa-bars-staggered"></i>
+                        </button>
+                     </div>
+                </nav>
+
+          </div>
+       </div>
+    </div>
+ </header>
+
+
+
+
+
+

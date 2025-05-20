@@ -1,0 +1,55 @@
+[section footerNav]
+handle = "Site\Menus"
+identifier = "slug"
+value = "footer-nav"
+==
+
+<div class="offcanvas-nav">
+  <div class="offcanvas-menu">
+    <nav class="offcanvas-menu__wrapper">
+      <div class="offcanvas-menu__header nav-fade">
+        <div class="logo">
+          <a href="{{ 'index'|page }}">
+            <img src="{{ 'assets/images/stoneland_logo_black.png' | theme }}" alt="Logo" style="width: 200px;height: auto;">
+          </a>
+        </div>
+        <button aria-label="close offcanvas menu" class="close-offcanvas-menu">
+          <i class="fa-light fa-xmark-large"></i>
+        </button>
+      </div>
+            
+      <div class="offcanvas-menu__list">
+        <div class="navbar__menu">
+          <ul class="navbar__list">
+            {% for headerItem in footerNav.items.toNested %}
+              {% if headerItem.children|length > 0 %}
+                {# Alt menüleri olan öğe #}
+                <li class="navbar__item navbar__item--has-children nav-fade">
+                  <button aria-label="dropdown menu" class="navbar__dropdown-label">{{ headerItem.title }}</button>
+                  <ul class="navbar__sub-menu">
+                    {% for childItem in headerItem.children %}
+                      <li>
+                        <a {% if childItem.reference %}href="{{ childItem.reference|link }}"{% endif %} {{ childItem.is_external ? 'target="_blank"' }}>
+                          {{ childItem.title }}
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </li>
+              {% else %}
+                {# Alt menüleri olmayan öğe #}
+                <li class="navbar__item nav-fade">
+                  <a {% if headerItem.reference %}href="{{ headerItem.reference|link }}"{% endif %} {{ headerItem.is_external ? 'target="_blank"' }}>
+                    {{ headerItem.title }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+          
+
+    </nav>
+  </div>
+</div>

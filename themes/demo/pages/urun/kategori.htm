@@ -1,0 +1,36 @@
+url = "/urun/kategori/:slug/:id"
+layout = "product"
+title = " Ürün Kategori"
+
+[collection urun]
+handle = "Urun\Post"
+
+[section kategori]
+handle = "Urun\Kategori"
+==
+{% set posts = urun.whereRelation('categories', 'slug', kategori.slug).paginate(16) %}
+
+
+
+<section class="section team-m fade-wrapper">
+    <div class="container">
+       <div class="row gaper">
+
+
+           {% for post in posts %}
+         {% partial 'urun/post-card' post=post bannerCss='banner-lg' %}
+     {% endfor %}
+
+
+
+       
+  
+       </div>
+    
+    </div>
+ </section>
+
+
+<nav class="blog-pagination" aria-label="Pagination">
+    {{ pager(posts) }}
+</nav>

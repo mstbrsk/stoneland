@@ -1,0 +1,51 @@
+uuid: a4ef64b8-88b4-4e13-bd3f-960155b3801b
+handle: Urun\Post
+type: structure
+name: Urun
+drafts: true
+multisite: true
+
+structure:
+    maxDepth: 3
+
+primaryNavigation:
+    label: Yeni Ürün
+    icon: icon-tree
+    order: 140
+
+navigation:
+    icon: icon-tree
+    parent: Urun\Post
+    order: 10
+
+
+groups:
+    regular_post:
+        name: Regular Post
+     
+        fields:
+            content:
+                tab: Edit
+                label: Content
+                type: richeditor
+                span: adaptive
+  
+
+            _blog_post_content:
+                type: mixin
+                source: Fields\ProductContentYeni
+
+    markdown_post:
+        name: Markdown Post
+        fields:
+            content:
+                tab: Edit
+                label: Content
+                type: markdown
+                span: adaptive
+
+    
+
+            _blog_post_content:
+                type: mixin
+                source: Fields\ProductContentYeni

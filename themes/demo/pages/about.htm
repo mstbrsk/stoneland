@@ -1,0 +1,51 @@
+##
+url = "/about"
+layout = "default"
+title = "About Page"
+meta_title = "{{ aboutpage.title }}"
+
+[section aboutpage]
+handle = "Page\About"
+
+[resources]
+vars[activeNavLink] = 'about'
+==
+
+<section class="cmn-banner bg-img" data-background="{{'assets/images/banner/28.jpg' | theme}}">
+    <div class="container">
+       <div class="row gaper align-items-center">
+          <div class="col-12 col-lg-5 col-xl-7">
+             <div class="text-center text-lg-start">
+                <h2 class="title title-anim"></h2>
+                <nav aria-label="breadcrumb">
+                   <ol class="breadcrumb">
+          
+                </nav>
+             </div>
+          </div>
+          <div class="col-12 col-lg-7 col-xl-5">
+             <div class="text-center text-lg-start">
+                <p class="primary-text"></p>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+
+
+
+    {% for block in aboutpage.blocks %}
+
+
+   {% partial 'blocks/' ~ str_slug(block.type) block=block %}
+{% endfor %}
+
+
+
+
+{% put headerAfter %}
+
+{% endput %}
+
+
+{% partial 'site/footer' %}

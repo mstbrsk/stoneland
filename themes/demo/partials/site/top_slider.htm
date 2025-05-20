@@ -1,0 +1,68 @@
+
+
+
+
+
+
+
+
+
+
+<section class="banner-three" >
+
+
+   <div class="banner-three__slider banner-three-alt">
+     
+      
+      {% if fifthBanners|length > 0 %}
+      {% for banner in fifthBanners.banners %}
+
+     
+      <div class="banner-three__slider-single"
+         data-background="{{ banner.image|media }}">
+         <div class="container">
+            <div class="row justify-content-end">
+               <div class="col-12 col-lg-9 offset-lg-3 col-xl-7 offset-xl-4">
+                  <div class="banner-three__content">
+                     <h1 class="light-title">
+                        {{ banner.title }}
+                     </h1>
+                     <div class="section__content-cta cta">
+                        <div class="arrow-wrapper d-none d-md-block">
+                           <span class="arrow"></span>
+                        </div>
+                    
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+      {% endfor %}  
+
+      {% else %}
+      {# Fallback #}
+      <div>
+          <div class="image-container">
+              <a href="{{ 'assets/images/default.jpg'|theme }}">
+                  <img src="{{ 'assets/images/default.jpg'|theme }}" class="w-full h-full" alt="Default Image">
+              </a>
+          </div>
+      </div>
+  {% endif %}
+
+
+
+
+
+
+   </div>
+
+   <img src="{{'assets/images/homepage/arrow.png'| theme}}"  alt="Image" class="arrow-img">
+   <img src="{{'assets/images/homepage/dot-large.png' | theme}}" alt="Image" class="dot-img">
+
+  
+</section>

@@ -1,0 +1,83 @@
+##
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        {% partial 'site/head/head-meta' %}
+        <title> {{ this.page.meta_title ?: placeholder('pageTitle') }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        {% partial 'site/head/head-links' %}
+    
+        {% partial 'site/head/analytics-code' %}
+        <meta name="turbo-visit-control" content="reload" />
+    </head>
+    <body  id="layout-nav" class="layout-home home-five-light">
+        <div class="my-app">  
+        {% partial 'site/header' %}
+
+        
+        <!-- Nav -->
+    
+        {% partial 'site/flash-messages' %}
+
+        <!-- Content -->
+
+            <div id="smooth-wrapper">
+                <div id="smooth-content">
+                     <main>
+
+                        <section class="cmn-banner bg-img" data-background="{{'assets/images/banner/31.jpg' | theme}}">
+                            <div class="container">
+                               <div class="row gaper align-items-center">
+                                  <div class="col-12 col-lg-5 col-xl-7">
+                                     <div class="text-center text-lg-start">
+                                        <h2 class="title title-anim"></h2>
+                                        <nav aria-label="breadcrumb">
+                                           <ol class="breadcrumb">
+                                  
+                                        </nav>
+                                     </div>
+                                  </div>
+                                  <div class="col-12 col-lg-7 col-xl-5">
+                                     <div class="text-center text-lg-start">
+                                        <p class="primary-text"></p>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </section>
+                        <div class="container">
+                        
+                            <div class="row g-5">
+                                <div class="col-md-8">
+                                    <div class="pe-3 pt-5">
+                                        {% page %}
+                                    </div>
+                                </div>
+            
+                                <div class="col-md-4">
+                                    <div class="position-sticky pt-5" >
+                                        {% partial 'blog/sidebar' %}
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    {% partial 'site/footer' %}
+                 </div>
+              
+                  
+         
+             </div>
+        
+        <!-- Footer -->
+    
+        {% partial 'site/head/head-scripts' %}
+        <!-- Mobile -->
+    
+      </div>
+    </body>
+</html>

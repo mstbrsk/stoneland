@@ -1,0 +1,25 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    sort_order:
+        label: dmrch.banner::lang.form.sort_order
+
+    image:
+        label: dmrch.banner::lang.form.image
+        type: partial
+        path: ~/plugins/dmrch/banner/models/banner/_image.htm
+
+    title:
+        label: dmrch.banner::lang.form.title
+        searchable: true
+
+    status:
+        label: dmrch.banner::lang.form.status
+        type: partial
+        path: ~/plugins/dmrch/banner/models/banner/_status.htm
+
+    created_at:
+        label: dmrch.banner::lang.form.created_at
+        type: date

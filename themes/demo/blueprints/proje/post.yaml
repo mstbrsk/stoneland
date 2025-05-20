@@ -1,0 +1,44 @@
+uuid: 861f4d19-ceb0-4dff-8a93-8f6c042e1b78
+handle: Proje\Post
+type: structure
+name: Projeler
+drafts: true
+multisite: true
+
+structure:
+    maxDepth: 3
+
+primaryNavigation:
+    label: Projeler
+    icon: icon-tree
+    order: 140
+
+navigation:
+    icon: icon-tree
+    parent: Proje\Post
+    order: 10
+
+groups:
+    regular_post:
+        name: Regular Post
+     
+        fields:
+
+            _blog_post_content:
+                type: mixin
+                source: Fields\ProjeContent
+
+    markdown_post:
+        name: Markdown Post
+        fields:
+            content:
+                tab: Edit
+                label: Content
+                type: markdown
+                span: adaptive
+
+    
+
+            _blog_post_content:
+                type: mixin
+                source: Fields\ProjeContent

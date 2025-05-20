@@ -1,0 +1,64 @@
+[banners]
+group_id = "1"
+controls = "true"
+nav = "true"
+
+
+
+[resources]
+css[] = "pages/index.css"
+css[] = "pages/components.css"
+vars[activeNavLink] = 'demo'
+vars[blueFooterStyle] = 1
+==
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{# Slider HTML #}
+<div data-control="gallery-slider" class="control-gallery-slider" id="gallery-{{ random() }}">
+    {% if banners|length > 0 %}
+        {%for banner in banners.banners %}
+            <div>
+                <div class="image-container">
+                    <a href="{{ banner.image|media }}">
+                        <img src="{{ banner.image|media }}" alt="Slider Image" class="w-full h-full">
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        {# Fallback #}
+        <div>
+            <div class="image-container">
+                <a href="{{ 'assets/images/default.jpg'|theme }}">
+                    <img src="{{ 'assets/images/default.jpg'|theme }}" class="w-full h-full" alt="Default Image">
+                </a>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+
+
+
+
+
+
+
+
+
+

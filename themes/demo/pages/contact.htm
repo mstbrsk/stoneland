@@ -1,0 +1,110 @@
+##
+title = "Contact Us"
+url = "/contact"
+layout = "default"
+meta_title = "Get in touch!"
+
+[resources]
+css[] = "pages/contact.css"
+vars[activeNavLink] = 'contact'
+vars[blueFooterStyle] = 1
+
+[global siteAyarlar]
+handle = "WebsiteGlobals"
+==
+
+{% set activeLocale = this.site.locale %}
+
+<section class="cmn-banner bg-img" data-background="{{'assets/images/banner/30.jpg' | theme}}">
+    <div class="container">
+       <div class="row gaper align-items-center">
+          <div class="col-12 col-lg-5 col-xl-7">
+             <div class="text-center text-lg-start">
+                <h2 class="title title-anim"></h2>
+                <nav aria-label="breadcrumb">
+                   <ol class="breadcrumb">
+          
+                </nav>
+             </div>
+          </div>
+          <div class="col-12 col-lg-7 col-xl-5">
+             <div class="text-center text-lg-start">
+                <p class="primary-text"></p>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+
+ <section class="section contact-m fade-wrapper agency">
+    <div class="container">
+       <div class="row gaper">
+          <div class="col-12 col-sm-6 col-xl-4">
+             <div class="contact-m__single topy-tilt fade-top">
+                <div class="thumb">
+                   <img src="{{'assets/images/icons/phone.png'|theme}}" alt="Image">
+                </div>
+                <div class="content">
+                   <h4>{{ activeLocale == 'tr' ? siteAyarlar.contact_telefon_tr : siteAyarlar.contact_telefon_en }}</h4>
+                   <p>
+                      <a href="#">{{ activeLocale == 'tr' ? siteAyarlar.contact_phone : siteAyarlar.contact_phone }} </a>
+                   </p>
+                 
+                </div>
+             </div>
+          </div>
+          <div class="col-12 col-sm-6 col-xl-4">
+             <div class="contact-m__single topy-tilt fade-top">
+                <div class="thumb">
+                   <img src="{{'assets/images/icons/mail.png'|theme}}" alt="Image">
+                </div>
+                <div class="content">
+                   <h4>{{ activeLocale == 'tr' ? siteAyarlar.contact_email_tr : siteAyarlar.contact_email_en }}</h4>
+                   <p>
+                      <a href="mailto:info@stonelandlimited.com">{{ activeLocale == 'tr' ? siteAyarlar.contact_email: siteAyarlar.contact_email}}</a>
+                   </p>
+            
+                </div>
+             </div>
+          </div>
+          <div class="col-12 col-sm-6 col-xl-4">
+             <div class="contact-m__single topy-tilt fade-top">
+                <div class="thumb">
+                   <img src="{{'assets/images/icons/location.png'|theme}}" alt="Image">
+                </div>
+                <div class="content_contact">
+                   <h4>{{ activeLocale == 'tr' ? siteAyarlar.contact_adres_tr : siteAyarlar.contact_adres_en }}</h4>
+                   <p>
+                     
+                         {{ activeLocale == 'tr' ? siteAyarlar.contact_address: siteAyarlar.contact_address_en}}
+                     
+                   </p>
+                </div>
+             </div>
+          </div>
+
+       </div>
+       <div class="row">
+          <div class="col-12">
+             <div class="map-wrapper">
+                <div class="row gaper">
+                   <div class="col-12 col-lg-12">
+                      <div class="contact__map fade-top">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3014.750096593687!2d29.157054!3d40.921225!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac500aa8d74b7%3A0x9b87f6166c5a0b23!2sRitim%20Office%20Haz%C4%B1r%20Ofis%20%26%20Sanal%20Ofis%20Kiralama%20Hizmetleri!5e0!3m2!1str!2str!4v1745841967633!5m2!1str!2str" width="100" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                      </div>
+                   </div>
+              
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+
+
+
+
+
+
+
+{% partial 'site/footer' %}

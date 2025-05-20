@@ -1,0 +1,104 @@
+{% for block in aboutpage.blocks %}
+    {% if block.type == 'About Section' %}
+        {# Hakkımızda özel bloğu #}
+        {% set blockImage = block.image ? block.image|media : 'assets/images/blocks/about-default.jpg'|theme %}
+        
+
+        <section class="section agency">
+            <div class="container">
+               <div class="row gaper align-items-center">
+                  <div class="col-12 col-lg-6">
+                     <div class="agency__thumb">
+                        <img src="assets/images/agency/thumb-one.png" alt="Image" class="thumb-one fade-left">
+                        <img src="assets/images/agency/thumb-two.png" alt="Image" class="thumb-two fade-right">
+                     </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                     <div class="agency__content section__content">
+                        <span class="sub-title">
+                           
+                           <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                        <h2 class="title title-anim" style="color: black;">fcbv
+                            {{ block.title }}
+                        </h2>
+                        <div class="paragraph">
+                           <p>    {{ block.content|raw }}</p>
+                        </div>
+                        <div class="skill-wrap">
+                           <div class="skill-bar-single">
+                              <div class="skill-bar-title">
+                                 <p class="primary-text">Website design</p>
+                              </div>
+                              <div class="skill-bar-wrapper" data-percent="75%">
+                                 <div class="skill-bar">
+                                    <div class="skill-bar-percent">
+                                       <span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="skill-bar-single">
+                              <div class="skill-bar-title">
+                                 <p class="primary-text">Digital Marketing</p>
+                              </div>
+                              <div class="skill-bar-wrapper" data-percent="90%">
+                                 <div class="skill-bar">
+                                    <div class="skill-bar-percent">
+                                       <span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="section__content-cta">
+                           <a href="about-us.html" class="btn btn--primary">Know More</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <img src="assets/images/star.png" alt="Image" class="star">
+            <img src="assets/images//agency/dot-large.png" alt="Image" class="dot-large">
+         </section>
+
+
+        <section class="section agency">
+            <div class="container">
+               <div class="row gaper align-items-center">
+                  <div class="col-12 col-lg-6">
+                     <div class="agency__thumb">
+                        <img src="{{ blockImage }}" alt="Image" class="thumb-one fade-left">
+                        <img src="{{ blockImage }}" alt="Image" class="thumb-two fade-right">
+                     </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                     <div class="agency__content section__content">
+                        <span class="sub-title">
+                  
+                           <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                        <h2 class="title title-anim">
+                           
+                        </h2>
+                        <div class="paragraph">
+                        
+                          
+                          
+                 
+                        </div>
+        
+                     
+                     </div>
+                  </div>
+               </div>
+            </div>
+       
+         </section>
+
+
+    {% else %}
+        {# Diğer tip bloklar için normal partial yükleme #}
+       
+    {% endif %}
+{% endfor %}

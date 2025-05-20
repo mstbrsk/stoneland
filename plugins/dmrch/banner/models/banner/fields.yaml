@@ -1,0 +1,69 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    
+    status:
+        label: dmrch.banner::lang.form.status
+        span: left
+        type: switch
+        default: 1
+
+    published_at:
+        label: dmrch.banner::lang.form.published_at
+        span: left
+        type: datepicker
+        mode: datetime
+
+    title:
+        label: dmrch.banner::lang.form.title
+        span: full
+        type: text
+
+    description:
+        label: dmrch.banner::lang.form.description
+        span: full
+        type: richeditor
+
+    link_on:
+        label: dmrch.banner::lang.form.link_on
+        type: switch
+        span: left
+
+    link:
+        label: dmrch.banner::lang.form.link
+        type: text
+        span: left
+        trigger:
+            action: show
+            field: link_on
+            condition: checked
+
+    btn_title:
+        label: dmrch.banner::lang.form.btn_title
+        type: text
+        span: left
+        trigger:
+            action: show
+            field: link_on
+            condition: checked
+
+    target:
+        label: dmrch.banner::lang.form.target
+        commentAbove: dmrch.banner::lang.form.target_comment
+        type: radio
+        options:
+            _self: dmrch.banner::lang.form.self
+            _blank: dmrch.banner::lang.form.blank
+        span: left
+        trigger:
+            action: show
+            field: link_on
+            condition: checked   
+            
+    image:
+        label: dmrch.banner::lang.form.image
+        type: fileupload
+        mode: image
+        required: true

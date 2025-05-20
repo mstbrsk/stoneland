@@ -1,0 +1,31 @@
+{% set blockImage = block.image ? block.image|media : 'assets/images/blocks/chart.png'|theme %}
+
+
+<section class="section agency">
+      <div class="container">
+         <div class="row gaper align-items-center">
+            <div class="col-12 col-lg-6">
+               <div class="agency__thumb">
+                  <img src="{{ blockImage }}" alt="Image" class="thumb-one fade-left img-fluid" style="border-radius: 50px;">
+                  <img src="{{ blockImage }}" alt="Image" class="thumb-two fade-right img-fluid" style="border-radius: 50px;">
+               </div>
+            </div>
+            <div class="col-12 col-lg-6">
+               <div class="agency__content section__content">
+              
+                  <h2 class="title title-anim">
+                     <span class="sub-title" style="color: black;">
+                
+                        <i class="fa-solid fa-arrow-right"></i>
+                     </span>  {{ block.title }}
+                  </h2>
+                  <div class="paragraph">
+                     <p>{{ block.content|raw }}</p>
+                  </div>
+     
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </section>

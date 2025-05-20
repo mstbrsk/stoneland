@@ -1,0 +1,44 @@
+{% set sliderImages = [] %}
+
+{# Debug için resim yollarını yazdırın #}
+{% set assetPaths = this.theme.getAssetPaths(['assets/images/slider']) %}
+
+
+{% for file in assetPaths %}
+    {% if file|lower ends with '.jpg' or file|lower ends with '.png' or file|lower ends with '.jpeg' %}
+        {% set filename = file|split('/')|last %}
+        {% set sliderImages = sliderImages|merge(['slider/' ~ filename]) %}
+    {% endif %}
+{% endfor %}
+
+
+
+{% set galleryId = 'carousel' ~ random() %}
+{% set width = width|default(1200) %}
+{% set height = height|default(500) %}
+
+<div data-control="gallery-slider" class="control-gallery-slider" id="{{ galleryId }}">
+    {% if sliderImages|length > 0 %}
+        {% for image in sliderImages %}
+            <div>
+                <div class="image-container">
+                    <a href="{{ image|media }}">
+                        <img src="{{ image|media|resize(width, height, { extension: 'png', mode: 'crop' }) }}" alt="Slider Image">
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        {# Fallback için default images #}
+        {% for defaultImage in ['workspace', 'desktop', 'pancakes', 'doughnuts'] %}
+            {% set image = ('assets/images/stock/' ~ defaultImage ~ '.png')|theme %}
+            <div>
+                <div class="image-container">
+                    <a href="{{ image }}">
+                        <img src="{{ image }}" alt="Default Image">
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>

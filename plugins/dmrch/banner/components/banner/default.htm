@@ -1,0 +1,46 @@
+{% set banners = __SELF__.banners %}
+
+{% set group_id = __SELF__.property('group_id') %}
+
+
+<div class="banner-container" style="position: relative;">
+	<div id="banner-carousel-{{ group_id }}" class="banner-slider">
+		{% for getB in banners %}
+
+			{% if getB.group_id == group_id %}
+				<div class="item-banner" style="background: url('{{ getB.image.getPath() }}') center no-repeat; min-height: 500px;">
+					<span class="item-description">
+						{% if getB.description %}
+							<p>{{ getB.description|raw }}</p>
+						{% endif %}
+
+						{% if getB.link_on %}
+							<a href="{{ getB.link }}" target="{{ getB.target }}" class="btn btn-primary">{{ getB.btn_title }}</a>
+						{% endif %}
+					</span>			
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
+
+{% put scripts %}
+	<script>
+		var slider = tns({
+		    container: '#banner-carousel-{{ group_id }}',
+		    mode: "gallery",
+		    items: 1,    		
+    		speed: 1000,
+    		loop: true,
+    		autoplayHoverPause: true,
+    		autoplayButtonOutput: false,
+    		center: true,
+    		autoplayTimeout: 7000,
+    		autoplay: true,
+    		controls: {{ __SELF__.property('controls') }},
+    		nav: {{ __SELF__.property('nav') }},
+    		controlsPosition: 'bottom',
+    		navPosition: 'bottom',
+		});
+	</script>
+{% endput %}

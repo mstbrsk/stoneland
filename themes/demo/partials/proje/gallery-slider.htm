@@ -1,0 +1,56 @@
+{% set galleryId = 'carousel' ~ random() %}
+{% set width = width|default(640) %}
+{% set height = height|default(640) %}
+
+
+
+
+
+<div data-control="gallery-slider__" class="control-gallery-slider" id="{{ galleryId }}">
+    {% if gallery %}
+       <section class="section team-m fade-wrapper">
+                  <div class="container">
+                     <div class="row gaper">
+        {% for image in gallery %}
+
+
+
+
+                        <div class="col-12 col-md-6 col-xl-4">
+                           <div class="team-m__single ">
+                              <div class="thumb">
+                                 <a href="{{ image|media }}" class="galleryItem">
+                                    <img src="{{ image|resize(width, height, { extension: 'png', mode: 'crop' }) }}" alt="Image">
+                                 </a>
+                             
+                              </div>
+                           </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+        {% endfor %}
+                          </div>
+                  
+
+                  </div>
+               </section>
+    {% else %}
+        {% for defaultImage in ['workspace', 'desktop', 'pancakes', 'doughnuts'] %}
+            {% set image = ('assets/images/stock/' ~ defaultImage ~ '.png')|theme %}
+            <div>
+                <div class="image-container">
+                    <a href="{{ image }}">
+                        <img src="{{ image|resize(width, height, { extension: 'png', mode: 'crop' }) }}">
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>

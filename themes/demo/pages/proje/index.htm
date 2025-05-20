@@ -1,0 +1,49 @@
+url = "/proje"
+layout = "product"
+title = "index"
+
+[collection post]
+handle = "Proje\Post"
+
+
+
+
+[resources]
+vars[activeNavLink] = "proje"
+==
+{% set posts = post.paginate(20) %}
+
+
+
+
+               <section class="section team-m ">
+                  <div class="container">
+                     <div class="row gaper">
+                     
+       
+       
+                    
+         {% for post in posts %}
+         {% partial 'proje/proje-card' post=post bannerCss='banner-lg' %}
+     {% endfor %}
+
+
+
+
+
+
+      
+                     </div>
+          
+                  </div>
+
+<nav class="blog-pagination mt-5" aria-label="Pagination">
+    {{ pager(posts) }}
+</nav>
+
+
+               </section>
+
+
+
+

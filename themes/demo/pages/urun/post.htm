@@ -1,0 +1,84 @@
+url = "/urun/post/:slug/:id"
+
+title = "urun"
+layout = "product"
+
+
+
+[section urun]
+handle = "Urun\Post"
+
+
+[collection kategori]
+handle = "Urun\Kategori"
+==
+
+
+
+
+
+
+
+<style> 
+  .paragraph > p { color: black;}
+
+  .paragraph > ul > li { color: black;}
+
+  .paragraph > h2{ color: black;font-size: 40px; line-height: 50px;}
+
+  .paragraph > h1{ color: black; font-size: 40px; line-height: 50px;}
+
+  
+
+</style>
+
+
+
+
+
+
+
+ 
+      <section class="section pb-0 team-det fade-wrapper">
+        <div class="container">
+           <div class="row gaper">
+              <div class="col-12 col-lg-5 col-xxl-4">
+                 <div class="team-det__thumb ">
+                    {% if urun.banner %}
+                    <img src="{{ urun.banner.path }}" alt="Image">
+                    {% else %}
+                    <div class="card-banner banner-lg" style="background-image:url('{{ partial('site/helpers/random-stock-image') }}')"></div>
+                    {% endif %}
+                    {% partial 'controls/gallery-slider' gallery=urun.gallery %}
+                 </div>
+              </div>
+              <div class="col-12 col-lg-7 col-xxl-8">
+                 <div class="team-det__content ">
+                 
+                    <div class="content">
+                        {% if urun.entry_type == 'markdown_post' %}
+                        {{ post.content|md|content }}
+                    {% else %}
+                        {{ urun.content|content }}
+                    {% endif %}
+                    </div>
+                
+                 </div>
+              </div>
+           </div>
+     
+        </div>
+
+        <div class="blog-post-gallery">
+          
+        </div>
+
+
+
+
+
+
+     
+
+     </section>
+   

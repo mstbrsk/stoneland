@@ -1,0 +1,66 @@
+{# Vendor #}
+<script src="{{ 'assets/vendor/jquery.min.js'|theme }}"></script>
+<script src="{{ 'assets/vendor/bootstrap/bootstrap.min.js'|theme }}"></script>
+<script src="{{ 'assets/vendor/codeblocks/codeblocks.min.js'|theme }}"></script>
+<script src="{{ 'assets/vendor/slick-carousel/slick.min.js'|theme }}"></script>
+
+<script type="module">
+    import PhotoSwipeLightbox from "{{ 'assets/vendor/photoswipe/photoswipe-lightbox.esm.min.js'|theme }}";
+    import PhotoSwipeModule from "{{ 'assets/vendor/photoswipe/photoswipe.esm.min.js'|theme }}"
+    import PhotoSwipeDynamicCaption from "{{ 'assets/vendor/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.esm.js'|theme }}";
+
+    window.PhotoSwipeLightbox = PhotoSwipeLightbox;
+    window.PhotoSwipeModule = PhotoSwipeModule;
+    window.PhotoSwipeDynamicCaption = PhotoSwipeDynamicCaption;
+</script>
+
+{# App #}
+{% framework extras %}
+<script src="{{ 'assets/js/controls/alert-dialog.js'|theme}}"></script>
+<script src="{{ 'assets/js/controls/password-dialog.js'|theme}}"></script>
+<script src="{{ 'assets/js/controls/gallery-slider.js'|theme}}"></script>
+<script src="{{ 'assets/js/controls/card-slider.js'|theme}}"></script>
+<script src="{{ 'assets/js/controls/quantity-input.js'|theme}}"></script>
+
+<script src="{{ 'assets/js/theme/plugins.js'|theme}}"></script>
+
+<script src="{{ 'assets/js/app.js'|theme}}"></script>
+
+
+<!-- bootstrap five js -->
+
+<!-- nice select js -->
+<script src="{{ 'assets/js/theme/vendor/bootstrap/js/bootstrap.bundle.min.js'|theme}}"></script>
+<!-- magnific popup js -->
+<script src="{{ 'assets/js/theme/vendor/nice-select/js/jquery.nice-select.min.js'|theme}}"></script>
+<!-- slick js -->
+<script src="{{ 'assets/js/theme/vendor/magnific-popup/js/jquery.magnific-popup.min.js'|theme}}"></script>
+<!-- image loaded js -->
+<script src="{{ 'assets/js/theme/vendor/slick/js/slick.min.js'|theme}}"></script>
+<!-- isotope js -->
+<script src="{{ 'assets/js/theme/vendor/images-loaded/imagesloaded.pkgd.min.js'|theme}}"></script>
+<!-- chroma js -->
+<script src="{{ 'assets/js/theme/vendor/isotope/isotope.pkgd.min.js'|theme}}"></script>
+<!-- splittext js -->
+<script src="{{ 'assets/js/theme/vendor/gsap/chroma.min.js'|theme}}"></script>
+<!-- scrollsmoother js -->
+<script src="{{ 'assets/js/theme/vendor/gsap/SplitText.min.js'|theme}}"></script>
+<!-- scrollto js -->
+<script src="{{ 'assets/js/theme/vendor/gsap/ScrollSmoother.min.js'|theme}}"></script>
+<!-- scrolltrigger js -->
+<script src="{{ 'assets/js/theme/vendor/gsap/ScrollToPlugin.min.js'|theme}}"></script>
+<!-- gsap js -->
+<script src="{{ 'assets/js/theme/vendor/gsap/ScrollTrigger.min.js'|theme}}"></script>
+<!-- vanilla tilt js -->
+<script src="{{ 'assets/js/theme/vendor/gsap/gsap.min.js'|theme}}"></script>
+
+<script src="{{ 'assets/js/theme/vendor/vanilla-tilt/tilt.jquery.js'|theme}}"></script>
+<!-- ==== / js dependencies end ==== -->
+<!-- plugins js -->
+<script src="{{ 'assets/js/theme/plugins.js'|theme}}"></script>
+<!-- main js -->
+<script src="{{ 'assets/js/theme/main.js'|theme}}"></script>
+
+
+{# Placeholder #}
+{% scripts %}

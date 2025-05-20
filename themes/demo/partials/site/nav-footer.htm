@@ -1,0 +1,29 @@
+##
+[section footerNav]
+handle = "Site\Menus"
+identifier = "slug"
+value = "footer-nav"
+==
+<div class="row gx-0">
+    {% for headerItem in footerNav.items.toNested %}
+        <div class="col-md-4 mb-3">
+            <ul class="nav flex-column" >
+                <li class="nav-item nav-item-header">
+                    <a class="nav-link" {% if headerItem.reference %}href="{{ headerItem.reference|link }}"{% endif %} {{ item.is_external ? 'target="_blank"' }}>
+                
+                    </a>
+                </li>
+                {% for item in headerItem.children %}
+                    <li class="nav-item">
+                        <a class="nav-link" {% if item.reference %}href="{{ item.reference|link }}"{% endif %} {{ item.is_external ? 'target="_blank"' }}>
+                       
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+</div>
+{# Example Footer Nav Markup
+
+#}

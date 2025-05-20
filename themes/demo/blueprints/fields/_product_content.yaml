@@ -1,0 +1,45 @@
+uuid: 11b4e493-d929-4ce5-9089-96e43134f2f8
+handle: Fields\ProductContent
+type: mixin
+name: Product Post Content
+
+fields:
+    banner:
+        tab: Manage
+        label: Banner
+        type: fileupload
+        mode: image
+        maxFiles: 1
+
+
+    categories:
+        tab: Manage
+        label: Categories
+        commentAbove: 'Select categories the blog post belongs to'
+        type: entries
+        maxItems: 1
+        source: Product\Category
+
+    featured_text:
+        tab: Featured
+        label: Featured Text
+        type: textarea
+        size: small
+
+    gallery:
+        label: Gallery
+        type: fileupload
+        mode: image
+        span: adaptive
+        tab: Gallery
+
+    gallery_media:
+        label: Media
+        type: mediafinder
+        mode: image
+        span: adaptive
+        tab: Media
+
+
+
+

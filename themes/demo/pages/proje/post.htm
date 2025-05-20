@@ -1,0 +1,107 @@
+url = "/proje/post/:slug/:id"
+layout = "product"
+title = "Proje"
+
+[section proje]
+handle = "Proje\Post"
+
+[global siteAyarlar]
+handle = "WebsiteGlobals"
+==
+{% set activeLocale = this.site.locale %}
+
+
+<style> 
+  .paragraph > p { color: black;}
+
+  .paragraph > ul > li { color: black;}
+
+  .paragraph > h2{ color: black;font-size: 40px; line-height: 50px;}
+
+  .paragraph > h1{ color: black; font-size: 40px; line-height: 50px;}
+
+  
+
+</style>
+
+
+
+
+
+
+ 
+
+
+        
+     
+    
+
+       
+         
+    
+
+
+           <section class="section project-d">
+                   <h2 class="title title-anim" style="color: black;" >
+                              {{ proje.title}}
+                              </h2>
+                  <div class="container">
+
+
+                     <div class="row gaper fade-wrapper">
+                        <div class="col-12 col-sm-6 col-xl-4">
+                          
+                           
+                           <div class="project-d-o__single fade-top">
+                         
+                              <div class="content">
+                                 <h3 style="color: rgb(0, 0, 0);" >     {{ activeLocale == 'tr' ? siteAyarlar.tr_lokasyon_title : siteAyarlar.en_lokasyon_title }}
+
+                                 </h3>
+                                 <h5 style="color: rgb(0, 0, 0);" >{{ proje.featured_text_name }}</h5>
+                                 <p></p>
+                              </div>
+                              <div class="thumb">
+                                 <img src="{{ asset('themes/demo/assets/images/projects/icon-one.png') }}" alt="Image">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-xl-4">
+                           <div class="project-d-o__single fade-top">
+                              <div class="content">
+                                  <h3 style="color: rgb(0, 0, 0);" >{{ activeLocale == 'tr' ? siteAyarlar.tr_stones_title : siteAyarlar.en_stones_title }}</h3>
+                                 <h5 style="color: rgb(0, 0, 0);">  {{ proje.featured_text_description }}</h5>
+                                 <p></p>
+                              </div>
+                              <div class="thumb">
+                                 <img src="{{ asset('themes/demo/assets/images/projects/icon-two.png') }}" alt="Image">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-xl-4">
+                           <div class="project-d-o__single fade-top">
+                              <div class="content">
+                                   <h3 style="color: rgb(0, 0, 0);" >{{ activeLocale == 'tr' ? siteAyarlar.tr_area_title : siteAyarlar.en_a_title }}</h3>
+                                 <h5 style="color: rgb(0, 0, 0);">{{ proje.featured_text_content }}</h5>
+                                 <p></p>
+                              </div>
+                              <div class="thumb">
+                                 <img src="{{ asset('themes/demo/assets/images/projects/icon-three.png') }}" alt="Image">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+       
+            
+            
+                  </div>
+      
+  {% partial 'proje/gallery-slider' gallery=proje.gallery %} 
+
+
+               </section>
+               <!-- ==== / project details end ==== -->
+               <!-- ==== ux process start ==== -->
+    
+               <!-- ==== / team details end ==== -->
+               <!-- ==== cta start ==== -->

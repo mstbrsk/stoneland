@@ -1,0 +1,58 @@
+##
+url = "/about"
+layout = "default"
+title = "About Page"
+meta_title = "{{ aboutpage.title }}"
+
+[section aboutpage]
+handle = "Page\About"
+
+[resources]
+vars[activeNavLink] = 'about'
+==
+
+<section class="cmn-banner bg-img" data-background="assets/images/banner/cmn-banner-bg.png">
+    <div class="container">
+       <div class="row gaper align-items-center">
+          <div class="col-12 col-lg-5 col-xl-7">
+             <div class="text-center text-lg-start">
+                <h2 class="title title-anim">About Us</h2>
+                <nav aria-label="breadcrumb">
+                   <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                         <a href="index.html">
+                            <i class="fa-solid fa-house"></i>
+                            Home
+                         </a>
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page">
+                         About Us
+                      </li>
+                   </ol>
+                </nav>
+             </div>
+          </div>
+          <div class="col-12 col-lg-7 col-xl-5">
+             <div class="text-center text-lg-start">
+                <p class="primary-text">We're an UK-based top-notch design agency committed to partnering
+                   with good companies and hiring the right people for the right roles.</p>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ {% partial 'blocks/about-block' %}  
+
+ <p>    {{ block.content|raw }}</p>
+ <p style="display: none;">    {% for block in aboutpage.blocks %}
+    {% partial 'blocks/' ~ str_slug(block.type) block=block %}
+{% endfor %}
+</p>
+
+
+
+{% put headerAfter %}
+
+{% endput %}
+
+

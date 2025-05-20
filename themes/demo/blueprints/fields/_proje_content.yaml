@@ -1,0 +1,42 @@
+uuid: ccadad07-3157-4b7c-8d7f-99f13d9dc2b3
+handle: Fields\ProjeContent
+type: mixin
+name: Proje Content
+
+fields:
+    banner:
+        tab: Manage
+        label: Banner
+        type: fileupload
+        mode: image
+        maxFiles: 1
+
+
+    featured_text_name:
+        tab: Featured
+        label: Featured Name
+        size: small
+
+    featured_text_description:
+        tab: Featured
+        label: Featured Description
+        size: small
+
+    featured_text_content:
+        tab: Featured
+        label: Featured Content
+        size: small
+
+    gallery:
+        label: Gallery
+        type: fileupload
+        mode: image
+        span: adaptive
+        tab: Gallery
+
+    gallery_media:
+        label: Media
+        type: mediafinder
+        mode: image
+        span: adaptive
+        tab: Media

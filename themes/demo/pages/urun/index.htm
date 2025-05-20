@@ -1,0 +1,38 @@
+url = "/urun"
+layout = "product"
+title = "index"
+
+[collection post]
+handle = "Urun\Post"
+
+[collection urunKategori]
+handle = "Urun\Kategori"
+
+
+[resources]
+vars[activeNavLink] = "urun"
+==
+{% set posts = post.paginate(20) %}
+
+
+<section class="section team-m fade-wrapper">
+    <div class="container">
+       <div class="row gaper">
+
+
+         {% for post in posts %}
+         {% partial 'urun/post-card' post=post bannerCss='banner-lg' %}
+     {% endfor %}
+
+
+
+          
+        
+       
+        
+       
+  
+       </div>
+    
+    </div>
+ </section>

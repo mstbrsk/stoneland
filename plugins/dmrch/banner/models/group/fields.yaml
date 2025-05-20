@@ -1,0 +1,12 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Name
+        type: text
+            
+    banners:
+        type: partial
+        path: $/dmrch/banner/controllers/group/_relation.htm

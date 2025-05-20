@@ -1,0 +1,181 @@
+##
+title = "Demonstration"
+url = "/"
+layout = "home"
+meta_title = "Stoneland | Naturel Stones"
+
+[collection blog]
+handle = "Blog\Post"
+
+
+
+
+
+[banners mainBanners]
+group_id = "1"
+controls = "true"
+nav = "true"
+
+
+[banners secondaryBanners]
+group_id = "3"
+controls = "true"
+nav = "true"
+
+[banners thirdBanners]
+group_id = "4"
+controls = "true"
+nav = "true"
+
+[banners fifthBanners]
+group_id = "5"
+controls = "true"
+nav = "true"
+
+
+[section aboutpage]
+handle = "Page\About"
+
+[resources]
+vars[activeNavLink] = 'about'
+
+[demoTodo]
+max = 3
+addDefault = 1
+
+
+
+[resources]
+css[] = "pages/index.css"
+css[] = "pages/components.css"
+vars[activeNavLink] = 'demo'
+vars[blueFooterStyle] = 1
+==
+
+    
+
+
+{% partial 'site/top_slider' %}
+
+
+{% set latestPosts = blog.limit(3).get %}
+<div class="page-index" style="top:-200px;position: relative;z-index:0;">
+    <div class="jumbotron" style="background-image: url('{{'assets/images/homepage/bg_1.jpg'|theme }}');background-size: cover;
+background-repeat: no-repeat;">
+        <div class="container">
+            <div class="row">
+         
+    
+                
+                
+                {# Slider HTML #}
+                <div data-control="gallery-slider" style="display: none;" class="control-gallery-slider" id="gallery-{{ random() }}">
+                    {% if mainBanners|length > 0 %}
+                        {%for banner in mainBanners.banners %}
+                            <div>
+                                <div class="image-container">
+                                    <a href="{{ banner.image|media }}">
+                                        <img src="{{ banner.image|media }}" alt="" class="w-full h-full">
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {# Fallback #}
+                        <div>
+                            <div class="image-container">
+                                <a href="{{ 'assets/images/default.jpg'|theme }}">
+                                    <img src="{{ 'assets/images/default.jpg'|theme }}" class="w-full h-full" alt="Default Image">
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                
+                
+                
+                <p class="lead" style="color: black;">   
+        
+                {% for block in aboutpage.blocks %}
+                {% if loop.first %} 
+
+                    {% set blockImage = block.image ? block.image|media : 'assets/images/blocks/chart.png'|theme %}
+<style>
+
+.jumbotron-intro > p { color: black !important;  }
+</style>
+
+<div class="col-lg-7">
+    <div class="jumbotron-intro">
+        <h4 style="display: none;">{{ block.title }}</h4>
+        <p class="lead" style="color: black !important;">
+            {{ block.content|raw }}                    
+        <p>
+         
+   
+    </div>
+</div>
+
+<div class="col-lg-5">
+    <div class="jumbotron-product ">
+        
+        <img src="{{ blockImage }}" class="img-fluid shadow-lg" style="border-radius: 50px;" alt="Product Shot" />
+
+        
+    </div>
+    
+</div>
+
+
+              {% endif %}
+                {% endfor %}
+             
+           
+    
+
+
+
+            </div>
+            <div class="jumbotron-decoration-1"></div>
+            <div class="jumbotron-decoration-2"></div>
+        </div>
+    </div>
+
+
+
+    
+
+
+{# Artık sadece bir kez görüntülenecek #}
+
+                    
+    {% partial 'site/alt_slider' %}
+
+
+
+   
+
+   
+
+
+
+    <div class="latestnews">
+        <div class="container">
+<h3 style="font-size: 30px;">
+
+BLOG
+</h3>
+
+            <div class="blog-featured row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3 pb-5" >
+                {% for post in latestPosts %}
+                    {% partial 'blog/post-card' post=post %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% partial 'site/footer' %}

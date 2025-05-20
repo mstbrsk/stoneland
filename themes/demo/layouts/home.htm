@@ -1,0 +1,40 @@
+##
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        {% partial 'site/head/head-meta' %}
+        <title> {{ this.page.meta_title ?: placeholder('pageTitle') }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        {% partial 'site/head/head-links' %}
+    
+        {% partial 'site/head/analytics-code' %}
+        <meta name="turbo-visit-control" content="reload" />
+    </head>
+    <body  id="layout-nav" class="layout-home home-five-light">
+        <div class="my-app">  
+        {% partial 'site/header' %}
+        <!-- Nav -->
+    
+        {% partial 'site/flash-messages' %}
+
+        <!-- Content -->
+
+            <div id="smooth-wrapper">
+                <div id="smooth-content">
+                     <main>
+                     {% page %}
+                    </main>
+                 </div>
+             </div>
+
+        <!-- Footer -->
+
+        {% partial 'site/head/head-scripts' %}
+        <!-- Mobile -->
+    
+      </div>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+banners:
+    label: Bannerlar
+    view:
+        list: $/dmrch/banner/models/banner/columns.yaml
+        toolbarButtons: create|delete
+        recordUrl: dmrch/banner/banners/update/:id  # Önemli: Popup yerine update sayfasına yönlendirir
+        recordOnClick: redirect  # Popup yerine yönlendirme yapar
+    manage:
+        form: $/dmrch/banner/models/banner/fields.yaml
+        recordsPerPage: 10

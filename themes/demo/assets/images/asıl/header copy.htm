@@ -1,0 +1,84 @@
+<!-- Nav -->
+
+
+        
+
+{% partial 'site/nav-links' %}
+
+
+
+ <div class="offcanvas-nav" >
+   <div class="offcanvas-menu">
+      <nav class="offcanvas-menu__wrapper">
+         <div class="offcanvas-menu__header nav-fade">
+            <div class="logo">
+               <a href="index.html">
+                  <img src="{{'assets/images/stoneland_logo.png' | theme }}" alt="Image" style="height: 100px;width: auto; z-index: 50;">
+
+               </a>
+            </div>
+            <button aria-label="close offcanvas menu" class="close-offcanvas-menu">
+               <i class="fa-light fa-xmark-large"></i>
+            </button>
+         </div>
+         <div class="offcanvas-menu__list">
+            <div class="navbar__menu">
+               <ul class="navbar__list">
+                  <li class="navbar__item navbar__item--has-children nav-fade">
+                     <button aria-label="dropdown menu" class="navbar__dropdown-label">Home</button>
+                     <ul class="navbar__sub-menu">
+                        <li>
+                           <a href="index.html">Creative Agency</a>
+                        </li>
+                        <li>
+                           <a href="index-light.html">Creative Agency Light</a>
+                        </li>
+                        <li>
+                           <a href="index-two.html">Digital Agency</a>
+                        </li>
+                        <li>
+                           <a href="index-two-light.html">Digital Agency Light</a>
+                        </li>
+                        <li>
+                           <a href="index-three.html">It Solution</a>
+                        </li>
+                        <li>
+                           <a href="index-three-light.html">It Solution Light</a>
+                        </li>
+                        <li>
+                           <a href="index-four.html">Personal Portfolio</a>
+                        </li>
+                        <li>
+                           <a href="index-four-light.html">Personal Portfolio Light</a>
+                        </li>
+                        <li>
+                           <a href="index-five.html">Interactive Portfolio</a>
+                        </li>
+                        <li>
+                           <a href="index-five-light.html">Interactive Portfolio Light</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="navbar__item nav-fade">
+                     <a href="about-us.html">About Us</a>
+                  </li>
+                  {% partial 'site/nav-links' %}
+             
+     
+               </ul>
+            </div>
+         </div>
+    
+      </nav>
+   </div>
+</div>
+
+
+{% placeholder headerAfter %}
+
+
+
+
+
+
+

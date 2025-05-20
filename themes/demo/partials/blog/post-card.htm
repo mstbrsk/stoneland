@@ -1,0 +1,50 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col {{ cssClass|default('') }}">
+    <div class="card card-post mb-5">
+        {% if post.banner %}
+            <div class="card-banner {{ bannerCss|default('') }}" style="background-image:url('{{ post.banner.path }}')"></div>
+        {% else %}
+            <div class="card-banner {{ bannerCss|default('') }}" style="background-image:url('{{ partial('site/helpers/random-stock-image') }}')"></div>
+        {% endif %}
+
+        <div class="card-body">
+            {% if post.categories %}
+                <div class="blog-post-categories">
+                    <ul class="list-inline">
+                        {% for category in post.categories %}
+                            <li class="list-inline-item" >
+                                &mdash; <a href="{{ 'blog/category'|page({ slug: category.slug, id: category.id }) }}">{{ category.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            <h4 class="card-title">
+                <a href="{{ 'blog/post'|page({ slug: post.slug, id: post.id }) }}" class="stretched-link"> {{ post.title }}</a>
+            </h4>
+
+            <div class="featured-text">
+                <p style="color: black;">{{ post.featured_text }}</p>
+            </div>
+        </div>
+
+        
+    </div>
+</div>

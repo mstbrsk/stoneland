@@ -1,0 +1,13 @@
+##
+[resources]
+css[] = "blocks/hero-image.css"
+==
+{% set heroImage = block.image ? block.image|media : 'assets/images/stock/desks-cropped.png'|theme %}
+
+
+
+
+<div class="video-modal">
+
+    <img src="{{ heroImage }}" alt="Image" class="modal-bg">
+ </div>
