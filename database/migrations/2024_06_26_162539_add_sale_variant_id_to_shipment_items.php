@@ -1,0 +1,25 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    public function up(): void
+    {
+        Schema::table('shipment_items', function (Blueprint $table) {
+            $table->uuid('sale_variant_id')->nullable();
+            $table->unsignedInteger('sale_variant_qty')->nullable();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('shipment_items', function (Blueprint $table) {
+            $table->dropColumn([
+                'sale_variant_id',
+                'sale_variant_qty',
+            ]);
+        });
+    }
+};
